@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <title>Vansh's Portfolio</title>
+</head>
+<body>
+   <div class="container">
+    <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+            <p class="nav-name">Vansh</p>
+            <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="#home" class="nav-link active-link">Home</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#about" class="nav-link">About</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <div class="circle"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <a href="assets/Resume/Vansh_resume.pdf">
+                <button class="btn">View Resume <i class="uil uil-file-alt"></i></button>
+            </a>    
+        </div>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+
+    <!-- -------------- MAIN ---------------- -->
+    <main class="wrapper">
+       <!-- -------------- FEATURED BOX ---------------- -->
+       <section class="featured-box" id="home">
+          <div class="featured-text">
+            <div class="featured-text-card">
+                <span class="uil uil-map-marker" style="font-size:medium;"></span>
+                <span style="font-size:medium; font-weight: bold;">28.7041° N, 77.1025° E</span>                
+            </div>
+            <div class="featured-name">
+                <p>I'm a <br><span class="typedText"></span></p>
+            </div>
+            <div class="featured-text-info">
+                <p>Cybersecurity enthusiast and researcher driven by curiosity.<br>
+                    Pursuing new challenges to innovate and advance.
+                </p>
+            </div>
+            <div class="featured-text-btn">
+                <a href="assets/Resume/Vansh_resume.pdf" download>
+                    <button class="btn">Download Resume <i class="uil uil-download-alt"></i></button>
+                </a>
+               <!--  add concept of Hash value to verify if the Resume isnt tempered with-->
+            </div>
+            <div class="social_icons">
+                <a href="https://www.linkedin.com/in/vansh123" class="icon"><i class="uil uil-linkedin-alt"></i></a>
+                <a href="https://github.com/cs-vansh" class="icon"><i class="uil uil-github-alt"></i></a>
+                <a href="https://medium.com/@vansh_" class="icon"><i class="uil uil-medium-m"></i></a>
+                <a href="https://www.instagram.com/cs_vansh" class="icon"><i class="uil uil-instagram"></i></a>
+                <!-- add leetcode -->
+            </div>
+          </div>
+          <div class="featured-image">  
+            <div class="image">
+                <img src="assets/images/Vansh.jpg" alt="Pic">
+            </div>
+          </div>
+       </section>
+       <!-- -------------- ABOUT BOX ---------------- -->
+       <section class="section" id="about">
+          <div class="top-header">
+            <h1>About Me</h1>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="about-info" style="text-align: center;">
+                    <h3>Introduction</h3>
+                    <p style="font-size:large; margin-top: 4px; padding:4px">
+                        Passionate about innovation and driven by a relentless pursuit of excellence, I merge my expertise in Software Development and Information Security. With a solid foundation in cybersecurity principles and ongoing studies in Computer Science, I approach challenges with a holistic perspective, utilizing my diverse skill set to address complex problems effectively. Committed to pushing the boundaries of technology, I actively engage in continuous learning initiatives and foster collaborative environments to drive meaningful advancements in the ever-evolving landscape of technology and security.
+                    </p>
+                </div>
+            </div>            
+            <div class="col" style="display: inline-block;">
+                <div class="skills-box" >
+                    <div class="skills-header">
+                        <h3>Technical Skills</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>C++</span>
+                        <span>Python</span>
+                        <span>Java</span>
+                        <span>Bash</span>
+                        <span>PowerShell</span>
+                        <span>cmd</span>
+                        <span>Git</span>
+                        <span>Django</span>
+                        <span>Data Structures and Algorithms</span>
+                        <span>Object-Oriented Programming</span>
+                        <span>Software Development Life Cycle</span>
+                        <span>Database Management System</span>
+                        <span>Computer Networks</span>
+                        <span>Operating System</span>
+                        <span>Application Security</span>
+                        <span>Secure Development Practices</span>
+                        <span>Threat Detection and Mitigation</span>
+                        <span>OSINT</span>
+                        <span>Security Standards and Frameworks</span>
+                    </div>
+                </div>
+                <br>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>Adaptability</span>
+                        <span>Problem-Solving</span>
+                        <span>Critical Thinking</span>
+                        <span>Leadership</span>
+                        <span>Communication</span>
+                        <span>Attention to Detail</span>
+                        <span>Teamwork</span>
+                        <span>Collaboration</span>                        
+                    </div>
+                </div>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- PROJECT BOX ---------------- -->
+
+       <section class="section" id="projects">
+          <div class="top-header">
+              <h1>Projects</h1>
+          </div>
+          <div class="project-container">
+            <div class="project-box">
+                <h3>CyberArmory</h3>
+                <img src="assets/images/CyberArmory.png" alt="CyberArmory" style="width: 100%; height: 200px; object-fit: contain;">
+                <p>
+                    Revolutionizing cybersecurity with a Python-powered toolkit, seamlessly optimizing routine tasks and implementing automation for today's dynamic cybersecurity landscape.
+                </p>
+            </div>
+            <div class="project-box">
+                <h3>File Integrity Monitor</h3>
+                <img src="assets/images/FileIntegrityMonitor.png" alt="FileIntegrityMonitor" style="width: 100%; height: 200px; object-fit: scale-down;">
+                <p>
+                     A PowerShell script ensuring file integrity in designated folders. <br>
+                     Detects changes using hashing for robust security.
+                </p>
+            </div>
+           </div>
+       </section>
+
+       <!-- -------------- CONTACT BOX ---------------- -->
+
+       <section class="section" id="contact">
+        <div class="top-header">
+            <h1>Get in touch</h1>
+            <span>Have an amazing Idea, let's work on it..</span>
+        </div>
+        <form id="contact-form" action="https://formsubmit.co/vanshbr2017@gmail.com" method="POST">
+            <div class="row">
+                <div class="col">
+                    <div class="contact-info">
+                        <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
+                        <p><i class="uil uil-envelope"></i> Email: vanshbr2017@gmail.com</p>
+                        <p><i class="uil uil-phone"></i> Phone: +91 78892-26115</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-control">
+                        <div class="form-inputs">
+                            <input type="text" name="name" class="input-field" placeholder="Name" required>
+                            <input type="email" name="email" class="input-field" placeholder="Email" required>
+                        </div>
+                        <div class="text-area">
+                            <textarea name="message" placeholder="Message" req></textarea>
+                        </div>
+
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <input type="hidden" name="_next" value="https://cs-vansh.github.io/thanks.html">
+
+                        <div class="form-button">
+                            <button type="submit" class="btn" id="btn">Send <i class="uil uil-message"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+
+    </main>
+
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+            <p>Vansh</p>
+        </div>
+        <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#about">About</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#projects">Projects</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-social-icons">
+            <a href="https://www.linkedin.com/in/vansh123" class="icon"><i class="uil uil-linkedin-alt"></i></a>
+            <a href="https://github.com/cs-vansh" class="icon"><i class="uil uil-github-alt"></i></a>
+            <a href="https://medium.com/@vansh_" class="icon"><i class="uil uil-medium-m"></i></a>
+            <a href="https://www.instagram.com/cs_vansh" class="icon"><i class="uil uil-instagram"></i></a>
+        </div>
+    </footer>
+
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+       <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="./main.js"></script>
+</body>
+</html>
