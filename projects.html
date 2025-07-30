@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <title>Projects</title>
+</head>
+<body>
+   <div class="container">
+    <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+            <p class="nav-name">Vansh</p>
+            <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="./index.html" class="nav-link">Home</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./index.html#about" class="nav-link">About</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./index.html#experience" class="nav-link">Experience</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./projects.html" class="nav-link active-link">Projects</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./featured.html" class="nav-link">Featured</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./index.html#contact" class="nav-link">Contact</a>
+                    <div class="circle"></div>
+                </li>
+            </ul>
+        </div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+    <!-- -------------- MAIN ---------------- -->
+    <main class="wrapper">
+       <!-- -------------- PROJECTS HEADER ---------------- -->
+       <section class="section" id="projects" style="padding-top: 120px;padding-bottom: 0;">
+          <div class="top-header">
+              <h1>Projects</h1>
+          </div>
+       </section>
+
+       <!-- -------------- PROJECTS BOX ---------------- -->
+       <section class="section" style="padding-top: 20px;">
+          <div class="project-container">
+            <div class="project-box">
+                <h3>Incident Management System</h3>
+                <img src="assets/images/TicketManagementSystem.png" alt="IncidentManagementSystem" style="width: 100%; height: 200px; object-fit: scale-down;">
+                <p><br>
+                    A web application for effective & efficient incident handling.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/cs-vansh/IncidentManagementSystem-Django" class="project-link" target="_blank">
+                        <button class="btn">View Code <i class="uil uil-github-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h3>Timing Based Covert Channel</h3>
+                <img src="assets/images/TimingBasedCovertChannel.png" alt="TimingBasedCovertChannel" style="width: 100%; height: 200px; object-fit: scale-down;">
+                <p>
+                    A proof of concept for covert communication using timing intervals in HTTP requests to encode and transmit data.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/cs-vansh/Timing-Based-Covert-Channel" class="project-link" target="_blank">
+                        <button class="btn">View Code <i class="uil uil-github-alt"></i></button>
+                    </a>
+                    <a href="https://medium.com/@vansh_/understanding-covert-channels-hands-on-19585315a19d" class="project-link" target="_blank">
+                        <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h3>CyberArmory</h3>
+                <img src="assets/images/CyberArmory.png" alt="CyberArmory" style="width: 100%; height: 200px; object-fit: contain;">
+                <p>
+                    A Python-powered toolkit, seamlessly optimizing routine tasks and implementing automation for today's dynamic cybersecurity landscape.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/cs-vansh/CyberArmory" class="project-link" target="_blank">
+                        <button class="btn">View Code <i class="uil uil-github-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h3>File Integrity Monitor</h3>
+                <img src="assets/images/FileIntegrityMonitor.png" alt="FileIntegrityMonitor" style="width: 100%; height: 200px; object-fit: scale-down;">
+                <p>
+                     A PowerShell script ensuring file integrity in designated folders. Creates baseline and monitors changes.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/cs-vansh/FileIntegrityMonitor" class="project-link" target="_blank">
+                        <button class="btn">View Code <i class="uil uil-github-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+           </div>
+       </section>
+
+       <!-- -------------- BACK TO HOME ---------------- -->
+       <section class="section" style="padding-top: 2em; padding-bottom: 3em;">
+          <div style="text-align: center; margin: 20px 0;">
+              <a href="./index.html">
+                  <button class="btn">Back to Home <i class="uil uil-arrow-left"></i></button>
+              </a>
+          </div>
+       </section>
+    </main>
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+            <p>Vansh</p>
+        </div>
+                <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="./index.html">Home</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./index.html#about">About</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./index.html#experience">Experience</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./projects.html">Projects</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./featured.html">Featured</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./index.html#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-social-icons">
+            <a href="https://www.linkedin.com/in/vansh123" class="icon"><i class="uil uil-linkedin-alt"></i></a>
+            <a href="https://github.com/cs-vansh" class="icon"><i class="uil uil-github-alt"></i></a>
+            <a href="https://medium.com/@vansh_" class="icon"><i class="uil uil-medium-m"></i></a>
+            <a href="https://www.instagram.com/cs_vansh" class="icon"><i class="uil uil-instagram"></i></a>
+        </div>
+    </footer>
+
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="./main.js"></script>
+</body>
+</html>

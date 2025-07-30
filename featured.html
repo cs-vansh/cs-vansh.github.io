@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <title>Featured</title>
+</head>
+<body>
+   <div class="container">
+    <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+            <p class="nav-name">Vansh</p>
+            <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="./index.html" class="nav-link">Home</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./index.html#about" class="nav-link">About</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./index.html#experience" class="nav-link">Experience</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./projects.html" class="nav-link">Projects</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./featured.html" class="nav-link active-link">Featured</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="./index.html#contact" class="nav-link">Contact</a>
+                    <div class="circle"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+    <!-- -------------- MAIN ---------------- -->
+    <main class="wrapper">
+       <!-- -------------- FEATURED HEADER ---------------- -->
+       <section class="section" id="featured">
+          <div class="top-header">
+              <h1>Featured</h1>
+          </div>
+       </section>
+
+       <!-- -------------- FEATURED ARTICLES BOX ---------------- -->
+       <!-- LinkedIn-style Featured Carousel -->
+       <!-- <section class="section featured-articles-section">
+          <div class="featured-carousel-section">
+              <div class="carousel-header">
+                  <h2></h2>
+                  <div class="carousel-nav">
+                      <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">
+                          <i class="uil uil-angle-left"></i>
+                      </button>
+                      <button class="carousel-btn next-btn" onclick="moveCarousel(1)">
+                          <i class="uil uil-angle-right"></i>
+                      </button>
+                  </div>
+              </div>
+              
+              <div class="carousel-container">
+                  <div class="carousel-track" id="carouselTrack">
+
+                      <div class="carousel-item">
+                          <div class="carousel-image">
+                              <img src="https://miro.medium.com/v2/format:webp/1*ta4vnWL-5q944qLwSQdRgg.png" alt="Session Hijacking">
+                          </div>
+                          <div class="carousel-content">
+                              <h4>Session Hijacking Using XSS</h4>
+                              <p>Exploring nested script tags and sanitization bypass techniques</p>
+                              <span class="carousel-date">Jun 29, 2024</span>
+                          </div>
+                      </div>
+                      
+                      <div class="carousel-item">
+                          <div class="carousel-image">
+                              <img src="https://miro.medium.com/v2/format:webp/0*LBj1de56oOOooW5S" alt="Covert Channels">
+                          </div>
+                          <div class="carousel-content">
+                              <h4>Covert Channels: Hiding Data</h4>
+                              <p>Secret communication through unexpected pathways</p>
+                              <span class="carousel-date">Jul 27, 2024</span>
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div> -->
+          
+          <!-- Divider -->
+          <!-- <div class="section-divider">
+              <h2>Articles</h2>
+          </div> -->
+
+          <div class="featured-container">
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://www.devx.com/wp-content/uploads/41868_Generated_Image.webp" alt="DevX Cybersecurity Balance">
+                </div>
+                <div class="article-content">
+                    <h3>18 Insights to Balance Security and Business from Top Leaders</h3>
+                    <p class="article-publication">Featured in <strong>DevX</strong> • Jul 11, 2025</p>
+                    <p class="article-description">
+                        Featured insights on aligning security with business strategy and finding the optimal balance between security and business objectives.
+                    </p>
+                    <div class="article-tags">
+                        <span class="tag">Business Security</span>
+                        <span class="tag">Risk Management</span>
+                        <span class="tag">Leadership</span>
+                    </div>
+                    <a href="https://www.devx.com/cybersecurity/18-insights-to-balance-security-and-business-from-top-leaders" class="article-link" target="_blank">
+                        <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/1*ta4vnWL-5q944qLwSQdRgg.png" alt="Session Hijacking Using XSS">
+                </div>
+                <div class="article-content">
+                    <h3>Session Hijacking Using XSS</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Jun 29, 2025</p>
+                    <p class="article-description">
+                        An in-depth exploration of how nested script tags can bypass sanitization logic and enable session hijacking via Cross‑Site Scripting (XSS) injections.
+                    </p>
+                    <div class="article-tags">
+                    <span class="tag">Web Security</span>
+                    <span class="tag">XSS</span>
+                    <span class="tag">Session Hijacking</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/session-hijacking-using-xss-f3448fb531d4" class="article-link" target="_blank">
+                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/0*LBj1de56oOOooW5S" alt="Covert Channels">
+                </div>
+                <div class="article-content">
+                    <h3>Covert Channels: Hiding Data in the Shadows of Communication</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Jul 27, 2024</p>
+                    <p class="article-description">
+                        A covert channel is a logical channel used to send hidden messages by exploiting information hiding techniques over a public channel. These channels enable secret communication by leveraging unexpected pathways.
+                    </p>
+                    <div class="article-tags">
+                    <span class="tag">Covert Communication</span>
+                    <span class="tag">Network Security</span>
+                    <span class="tag">Information Hiding</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/understanding-covert-channels-hands-on-19585315a19d" class="article-link" target="_blank">
+                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/1*JpnizaQkSvYVYDPNy325OA.png" alt="IDOR ERP Vulnerability">
+                </div>
+                <div class="article-content">
+                    <h3>How I found IDOR in College’s Third‑Party ERP Solution</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Apr 26, 2024</p>
+                    <p class="article-description">
+                    Detailed the discovery and remediation of an Insecure Direct Object Reference (IDOR) vulnerability in a third‑party ERP system, exposing sensitive student data.
+                    </p>
+                    <div class="article-tags">
+                    <span class="tag">Cybersecurity</span>
+                    <span class="tag">IDOR</span>
+                    <span class="tag">Vulnerability Discovery</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/idor-vulnerability-in-colleges-third-party-erp-solution-61497724eda7" class="article-link" target="_blank">
+                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/1*44STUDcUa1gXkLD6JQZlsA.png" alt="Data Wiping Security">
+                </div>
+                <div class="article-content">
+                    <h3>Don't Just Format, Wipe Your Data Before Selling Your Devices</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Aug 5, 2024</p>
+                    <p class="article-description">
+                        Have you ever sold a phone or laptop before? Did you reset these devices before selling/exchanging them? Learn why simple formatting isn't enough and how to properly delete your data before device disposal.
+                    </p>
+                    <div class="article-tags">
+                        <span class="tag">Data Security</span>
+                        <span class="tag">Privacy</span>
+                        <span class="tag">Device Security</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/dont-just-format-wipe-your-data-before-selling-your-devices-7862c0845091" class="article-link" target="_blank">
+                        <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://networksecuritytips.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Ft0lmizex%2Fproduction%2Ff6dec61b3689ac8eee5a736bd1733bc21dc52550-1792x1024.webp%3Fw%3D1792%26q%3D100%26auto%3Dformat&w=2048&q=100" alt="Risk Communication">
+                </div>
+                <div class="article-content">
+                    <h3>How Can You Effectively Communicate Risks to Non-Technical Stakeholders?</h3>
+                    <p class="article-publication">Featured in <strong>Network Security Tips</strong> • Aug 20, 2024</p>
+                    <p class="article-description">
+                        Featured insights on utilizing visuals and focusing on impact when communicating cybersecurity risks to non-technical stakeholders and business leaders.
+                    </p>
+                    <div class="article-tags">
+                        <span class="tag">Risk Communication</span>
+                        <span class="tag">Business Security</span>
+                        <span class="tag">Stakeholder Management</span>
+                    </div>
+                    <a href="https://networksecuritytips.com/qa/how-can-you-effectively-communicate-risks-to-non-technical-stakeholders" class="article-link" target="_blank">
+                        <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/1*4bOx5YocyFyK9zAspCLZKQ.png" alt="VITS Text-to-Speech">
+                </div>
+                <div class="article-content">
+                    <h3>Using VITS for Text-to-Speech (TTS) — with Code</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Apr 1, 2024</p>
+                    <p class="article-description">
+                        An introduction to implementing VITS (Variational Inference with adversarial learning for end-to-end Text-to-Speech) with practical code examples and implementation walkthrough.
+                    </p>
+                    <div class="article-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Text-to-Speech</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/using-vits-for-text-to-speech-tts-with-code-6e4e2c25e57d" class="article-link" target="_blank">
+                        <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Add more featured articles as needed -->
+          </div>
+       </section>
+
+       <!-- -------------- BACK TO HOME ---------------- -->
+       <section class="section" style="padding-top: 2em; padding-bottom: 3em;">
+          <div style="text-align: center; margin: 20px 0;">
+              <a href="./index.html">
+                  <button class="btn">Back to Home <i class="uil uil-arrow-left"></i></button>
+              </a>
+          </div>
+       </section>
+    </main>
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+            <p>Vansh</p>
+        </div>
+        <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="./index.html">Home</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./index.html#about">About</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./index.html#experience">Experience</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./projects.html">Projects</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./featured.html">Featured</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="./index.html#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-social-icons">
+            <a href="https://www.linkedin.com/in/vansh123" class="icon"><i class="uil uil-linkedin-alt"></i></a>
+            <a href="https://github.com/cs-vansh" class="icon"><i class="uil uil-github-alt"></i></a>
+            <a href="https://medium.com/@vansh_" class="icon"><i class="uil uil-medium-m"></i></a>
+            <a href="https://www.instagram.com/cs_vansh" class="icon"><i class="uil uil-instagram"></i></a>
+        </div>
+    </footer>
+
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="./main.js"></script>
+    
+    <!-- ----- CAROUSEL FUNCTIONALITY ----- -->
+    <script>
+        let currentIndex = 0;
+        const carouselTrack = document.getElementById('carouselTrack');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+        const itemsVisible = window.innerWidth <= 768 ? 1 : 3; // Show 1 item on mobile, 3 on desktop
+        const maxIndex = totalItems - itemsVisible;
+
+        function moveCarousel(direction) {
+            currentIndex += direction;
+            
+            // Boundary checks
+            if (currentIndex < 0) {
+                currentIndex = 0;
+            } else if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            
+            // Calculate transform
+            const itemWidth = items[0].offsetWidth + 20; // item width + gap
+            const translateX = -currentIndex * itemWidth;
+            
+            carouselTrack.style.transform = `translateX(${translateX}px)`;
+            
+            // Update button states
+            updateButtonStates();
+        }
+
+        function updateButtonStates() {
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === maxIndex;
+        }
+
+        // Initialize button states
+        updateButtonStates();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            currentIndex = 0;
+            carouselTrack.style.transform = 'translateX(0px)';
+            updateButtonStates();
+        });
+
+        // Add click functionality to carousel items
+        document.querySelectorAll('.carousel-item').forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const articleLinks = [
+                    'https://medium.com/@vansh_/session-hijacking-using-xss-f3448fb531d4',
+                    'https://medium.com/@vansh_/understanding-covert-channels-hands-on-19585315a19d',
+                    'https://medium.com/@vansh_/idor-vulnerability-in-colleges-third-party-erp-solution-61497724eda7',
+                    'https://medium.com/@vansh_/dont-just-format-wipe-your-data-before-selling-your-devices-7862c0845091'
+                ];
+                window.open(articleLinks[index], '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
