@@ -82,10 +82,12 @@ i{
 /* ------- BASE -------- */
 body{
     background: var(--body-color);
+    overflow-x: hidden;
 }
 .container{
     width: 100%;
     position: relative;
+    overflow-x: hidden;
 }
 
 /* ----- NAVIGATION BAR ----- */
@@ -128,7 +130,7 @@ nav{
     color: var(--text-color-second);
     font-weight: 500;
     padding-inline: 15px;
-    margin-inline: 20px;
+    margin-inline: 10px;
 }
 .nav-menu-btn{
     display: none;
@@ -140,14 +142,14 @@ nav{
 .active-link{
     position: relative;
     color: var(--first-color);
-    transition: .3;
+    transition: .3s;
 }
 .active-link::after{
     content: '';
     position: absolute;
     left: 50%;
-    bottom: -15px;
-    transform: translate(-50%, -50%);
+    bottom: -0.3em;
+    transform: translateX(-50%);
     width: 5px;
     height: 5px;
     background: var(--first-color);
@@ -283,6 +285,8 @@ nav{
 /* ----- MAIN BOX ----- */
 .section{
     padding-block: 5em;
+    position: relative;
+    z-index: 5;
 }
 .row{
     display: flex;
@@ -559,13 +563,18 @@ footer{
     row-gap: 30px;
     background: #F8F8F8;
     padding-block: 40px 60px;
+    margin-top: 50px;
 }
 .top-footer p{
     font-size: 25px;
     font-weight: 600;
+    color: var(--text-color-second);
 }
 .middle-footer .footer-menu{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 .footer_menu_list{
     list-style: none;
@@ -575,14 +584,22 @@ footer{
     color: var(--text-color-second);
     font-weight: 500;
     margin-inline: 20px;
+    transition: color 0.3s ease;
+}
+.footer_menu_list a:hover{
+    color: var(--first-color);
 }
 .footer-social-icons{
     display: flex;
-    gap: 30px;   
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .bottom-footer{
     font-size: 14px;
     margin-top: 10px;
+    color: var(--second-text-color);
+    text-align: center;
 }
 
 
@@ -594,6 +611,24 @@ footer{
     .image, .image img{
         width: 320px;
         height: 320px;
+    }
+    
+    /* Fix navigation dots positioning for tablet/smaller desktop */
+    .active-link::after{
+        bottom: -0.3em;
+        width: 5px;
+        height: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Ensure dots work for both desktop and mobile navigation at this breakpoint */
+    .nav_menu_list .active-link::after{
+        bottom: -0.3em;
+        width: 5px;
+        height: 5px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -610,22 +645,77 @@ footer{
         top: 80px;
         left: -100%;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
         width: 100%;
-        min-height: 450px;
-        height: 90vh;
+        min-height: 320px;
+        height: auto;
+        max-height: 70vh;
         transition: .3s;
+        z-index: 1000;
+        overflow-y: auto;
+        padding: 20px 0;
     }
     .nav_menu_list{
         flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
     }
     .nav-menu-btn{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    
+    /* Center navigation items in mobile */
+    .nav_menu_list .nav_list{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    
+    .nav_menu_list .nav-link{
+        display: block;
+        padding: 12px 0px;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        margin: 2px 0;
+        position: relative;
+    }
+    
+    .nav_menu_list .nav-link:hover{
+        background: rgba(139, 95, 191, 0.1);
+        color: var(--first-color);
+        border-radius: 8px;
+    }
+    
+    /* Fix active link dots positioning in mobile */
+    .nav_menu_list .active-link::after{
+        bottom: -0.3em;
+        width: 4px;
+        height: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Fix mobile header alignment */
+    nav{
+        padding-inline: 5vw;
+        align-items: center;
+    }
+    
+    .nav-logo{
+        display: flex;
+        align-items: center;
     }
     .featured-box{
         flex-direction: column;
@@ -657,7 +747,7 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 50px;
+        gap: 30px;
     }
     .col{
         display: flex;
@@ -681,6 +771,17 @@ footer{
     
     .project-link .btn {
         justify-content: center;
+        text-decoration: none !important;
+    }
+    
+    .project-link {
+        text-decoration: none !important;
+    }
+    
+    .project-link:hover,
+    .project-link:focus,
+    .project-link:active {
+        text-decoration: none !important;
     }
 
 }
@@ -688,21 +789,182 @@ footer{
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 
 @media only screen and (max-width: 540px){
-    .featured-name{
-        font-size: 40px;
+    /* Reduce section padding for mobile to make content appear sooner */
+    .section{
+        padding-block: 2.5em;
     }
+    
+    .featured-name{
+        font-size: 35px;
+        line-height: 1.2;
+        margin-block: 15px;
+    }
+    
+    .featured-text-info{
+        font-size: 14px;
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+    
+    .social_icons{
+        gap: 20px;
+        margin-top: 2em;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .icon{
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        transition: transform 0.3s ease;
+    }
+    
+    .icon:active{
+        transform: scale(0.95);
+    }
+    
     .project-box{
         width: 100%;
+        margin-bottom: 20px;
     }
+    
     .project-container{
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
     }
+    
     .form-inputs{
         flex-direction: column;
+        gap: 15px;
     }
+    
+    /* Optimize contact section for mobile */
+    .contact-info{
+        height: auto;
+        min-height: 200px;
+        padding: 15px 20px;
+    }
+    
+    .contact-info>h2{
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+    
+    .contact-info>p{
+        font-size: 0.9rem;
+        margin-block: 3px;
+    }
+    
+    /* Reduce header margin for contact section */
+    .top-header{
+        margin-bottom: 2.5em;
+    }
+    
+    /* Footer mobile optimizations */
+    footer{
+        padding-block: 30px 40px;
+        row-gap: 20px;
+    }
+    
+    .top-footer p{
+        font-size: 20px;
+    }
+    
+    .footer_menu_list a{
+        margin-inline: 10px;
+        font-size: 14px;
+    }
+    
+    .footer-social-icons{
+        gap: 20px;
+    }
+    
+    .footer-social-icons .icon{
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    /* Project links mobile fixes */
+    .project-link {
+        text-decoration: none !important;
+    }
+    
+    .project-link .btn {
+        text-decoration: none !important;
+    }
+    
+    .project-link:hover,
+    .project-link:focus,
+    .project-link:active {
+        text-decoration: none !important;
+    }
+    
     .input-field{
         width: 100%;
+        padding: 12px 15px;
+        font-size: 16px; /* Prevents zoom on iOS */
     }
+    
+    .text-area textarea{
+        padding: 12px 15px;
+        font-size: 16px;
+        min-height: 100px;
+        height: 100px;
+    }
+    
+    .btn{
+        padding: 12px 20px;
+        font-size: 14px;
+        min-height: 44px; /* Touch-friendly size */
+    }
+    
+    .nav-menu{
+        min-height: 280px;
+        height: auto;
+        max-height: 60vh;
+        padding: 15px 0;
+        overflow-y: auto;
+        justify-content: flex-start;
+    }
+    
+    .nav_menu_list{
+        padding: 0;
+        margin: 0;
+        gap: 6px;
+    }
+    
+    .nav_menu_list .nav-link{
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+    
+    .about-info h3{
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .about-info p{
+        font-size: 14px !important;
+        line-height: 1.6;
+    }
+    
+    .skills-list{
+        gap: 8px;
+    }
+    
+    .skills-list span{
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+/* ----- EXPERIENCE SECTION PRIORITY ----- */
+#experience {
+    position: relative;
+    z-index: 20;
 }
 
 /* ----- EXPERIENCE TIMELINE STYLES ----- */
@@ -710,17 +972,22 @@ footer{
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 10;
 }
 
 .timeline {
     position: relative;
     padding: 20px 0;
+    overflow-x: hidden;
+    z-index: 10;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 50px;
+    left: 60px;
     top: 0;
     bottom: 0;
     width: 3px;
@@ -730,23 +997,27 @@ footer{
 
 .timeline-item {
     display: flex;
+    flex-direction: column;
     margin-bottom: 50px;
     position: relative;
-    margin-left: 100px;
+    margin-left: 0;
+    z-index: 15;
 }
 
 .timeline-date {
-    position: absolute;
-    left: -150px;
-    top: 15px;
-    width: 120px;
-    text-align: right;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 140px;
+    text-align: center;
+    z-index: 20;
+    margin-bottom: 15px;
 }
 
 .timeline-date span {
     background: #8B5FBF;
     color: white;
-    padding: 8px 14px;
+    padding: 8px 12px;
     border-radius: 20px;
     font-weight: 600;
     font-size: 0.85rem;
@@ -759,26 +1030,30 @@ footer{
 .timeline-content {
     flex: 1;
     background: var(--body-color);
-    padding: 25px;
+    padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--hover-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-left: 30px;
+    margin-left: 80px;
     position: relative;
-    z-index: 1;
+    z-index: 15;
+    max-width: calc(100% - 80px);
 }
 
 .timeline-content:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    z-index: 25;
 }
 
 .timeline-content h3 {
     color: var(--text-color);
     font-size: 1.3rem;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 600;
+    line-height: 1.3;
+    word-wrap: break-word;
 }
 
 .timeline-content h4 {
@@ -786,41 +1061,182 @@ footer{
     font-size: 1rem;
     margin-bottom: 10px;
     font-weight: 500;
+    word-wrap: break-word;
 }
 
 .timeline-content p {
     color: var(--second-text-color);
+    font-size: 1rem;
     line-height: 1.6;
     margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-/* Timeline responsive design */
-@media only screen and (max-width: 768px) {
+/* Timeline responsive design for tablet and medium screens */
+@media only screen and (max-width: 900px) {
+    .experience-container {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+    
     .timeline::before {
-        left: 20px;
+        left: 40px;
         width: 2px;
     }
-
+    
     .timeline-item {
-        margin-left: 50px;
+        margin-left: 0;
+        margin-bottom: 40px;
+    }
+    
+    .timeline-date {
+        width: 110px;
+        margin-bottom: 12px;
+    }
+    
+    .timeline-date span {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+    
+    .timeline-content {
+        padding: 25px;
+        margin-left: 60px;
+        max-width: calc(100% - 60px);
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .timeline-content h4 {
+        font-size: 0.95rem;
+    }
+    
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .experience-container {
+        padding: 0 15px;
+    }
+    
+    .timeline::before {
+        left: 25px;
+        width: 2px;
+    }
+    
+    .timeline-item {
+        margin-left: 0;
         margin-bottom: 35px;
+    }
+    
+    .timeline-date {
+        width: 85px;
+        margin-bottom: 10px;
+    }
+    
+    .timeline-date span {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+        margin-left: 45px;
+        max-width: calc(100% - 45px);
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    .timeline-content h4 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .timeline-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+/* Timeline responsive design for mobile layout switch */
+@media only screen and (max-width: 600px) {
+    /* Reduce section padding for tablets and mobile */
+    .section{
+        padding-block: 3em;
+    }
+    
+    /* Ensure proper spacing for small screens */
+    .experience-container {
+        padding: 0 15px;
+    }
+    
+    .timeline::before {
+        left: 15px;
+        width: 2px;
+    }
+    
+    /* Switch to vertical mobile layout for very small screens */
+    .timeline-item {
+        flex-direction: column;
+        margin-left: 35px;
+        margin-bottom: 30px;
     }
 
     .timeline-date {
         position: static;
         width: auto;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         text-align: left;
+        margin-left: 0;
     }
-
+    
     .timeline-date span {
-        font-size: 0.8rem;
-        padding: 6px 12px;
+        font-size: 0.75rem;
+        padding: 4px 8px;
     }
 
     .timeline-content {
         margin-left: 0;
-        position: relative;
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .timeline-content h4 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .timeline-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    /* Footer responsive design for tablets */
+    footer{
+        padding-block: 35px 50px;
+        row-gap: 25px;
+    }
+    
+    .footer_menu_list a{
+        margin-inline: 15px;
+    }
+    
+    .footer-social-icons{
+        gap: 25px;
     }
 }
 
@@ -1111,6 +1527,16 @@ footer{
     text-decoration: none;
 }
 
+.article-link {
+    text-decoration: none !important;
+}
+
+.article-link:hover,
+.article-link:focus,
+.article-link:active {
+    text-decoration: none !important;
+}
+
 .article-link .btn:hover {
     background: #2980b9;
     transform: translateY(-2px);
@@ -1121,18 +1547,172 @@ footer{
 @media only screen and (max-width: 768px) {
     .featured-article {
         flex-direction: column;
+        margin-bottom: 30px;
     }
     
     .article-image {
         min-width: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        margin: 0 auto 20px auto;
+    }
+    
+    .article-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
     }
     
     .article-content {
         padding: 20px;
     }
     
+    .article-content h3 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+    
+    .article-description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .article-tags {
+        margin: 15px 0;
+        gap: 8px;
+    }
+    
+    .tag {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    
     .featured-container {
         padding: 0 15px;
+    }
+}
+
+/* Extra small screens */
+@media only screen and (max-width: 480px) {
+    .featured-name {
+        font-size: 30px;
+    }
+    
+    .featured-text-card span {
+        font-size: small !important;
+    }
+    
+    .social_icons {
+        gap: 15px;
+    }
+    
+    .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .article-content {
+        padding: 15px;
+    }
+    
+    .article-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+    
+    .skills-list span {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+    
+    .nav-menu {
+        min-height: 250px;
+        height: auto;
+        max-height: 55vh;
+        padding: 10px 0;
+        overflow-y: auto;
+        justify-content: flex-start;
+    }
+    
+    .nav_menu_list{
+        gap: 4px;
+    }
+    
+    .nav_menu_list .nav_list{
+        margin-bottom: 0px;
+    }
+    
+    .nav_menu_list .nav-link{
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    
+    /* Reduce header padding for very small screens */
+    nav{
+        padding-inline: 3vw;
+        height: 70px;
+        line-height: 70px;
+    }
+    
+    .nav-menu{
+        top: 70px;
+    }
+    
+    .about-info p {
+        font-size: 13px !important;
+        padding: 8px !important;
+    }
+    
+    /* Experience section specific fixes for very small screens */
+    .experience-container {
+        padding: 0 10px;
+    }
+    
+    .timeline-item {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        max-width: calc(100vw - 35px);
+        padding-right: 0;
+    }
+    
+    .timeline::before {
+        left: 8px;
+        width: 2px;
+    }
+    
+    .timeline-content {
+        padding: 10px;
+        margin-right: 5px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.0rem;
+        margin-bottom: 5px;
+        line-height: 1.2;
+    }
+    
+    .timeline-content h4 {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .timeline-content p {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+    
+    .timeline-date span {
+        font-size: 0.65rem;
+        padding: 2px 5px;
     }
 }
 
@@ -1158,6 +1738,16 @@ footer{
     text-decoration: none;
 }
 
+.project-link {
+    text-decoration: none !important;
+}
+
+.project-link:hover,
+.project-link:focus,
+.project-link:active {
+    text-decoration: none !important;
+}
+
 .project-link .btn:hover {
     background: #2980b9;
     transform: translateY(-2px);
@@ -1171,4 +1761,90 @@ footer{
 .project-link .btn.btn-secondary:hover {
     background: #7f8c8d;
     box-shadow: 0 4px 12px rgba(149, 165, 166, 0.3);
+}
+
+/* Mobile Performance & Accessibility Improvements */
+@media only screen and (max-width: 768px) {
+    /* Reduce animations for better performance */
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    /* Improve scroll behavior */
+    html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Better touch targets */
+    a, button, .icon, .nav-link {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Improve focus states for keyboard navigation */
+    button:focus, a:focus, input:focus, textarea:focus {
+        outline: 2px solid var(--first-color);
+        outline-offset: 2px;
+    }
+    
+    /* Prevent horizontal scroll */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+    
+    /* Fix specific sections that may cause overflow */
+    .container, .wrapper, .section {
+        overflow-x: hidden;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    
+    /* Ensure all text content wraps properly */
+    * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Optimize images for mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Ultra-mobile footer optimizations */
+    footer{
+        padding-block: 25px 35px;
+    }
+    
+    .footer_menu_list a{
+        margin-inline: 8px;
+        font-size: 13px;
+    }
+    
+    .footer-social-icons{
+        gap: 15px;
+    }
+    
+    .bottom-footer p{
+        font-size: 12px;
+    }
+}
+
+/* High DPI screens optimization */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
 }

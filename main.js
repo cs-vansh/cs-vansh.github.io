@@ -4,10 +4,43 @@ function myMenuFunction(){
 
   if(menuBtn.className === "nav-menu"){
     menuBtn.className += " responsive";
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = 'hidden';
   } else {
     menuBtn.className = "nav-menu";
+    // Restore body scroll when menu is closed
+    document.body.style.overflow = 'auto';
   }
 }
+
+// Close mobile menu when clicking on a nav link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navMenu = document.getElementById("myNavMenu");
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 900 && navMenu.classList.contains('responsive')) {
+                navMenu.className = "nav-menu";
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const navMenuBtn = document.querySelector('.nav-menu-btn');
+        const navMenu = document.getElementById("myNavMenu");
+        
+        if (window.innerWidth <= 900 && 
+            navMenu.classList.contains('responsive') && 
+            !navMenu.contains(event.target) && 
+            !navMenuBtn.contains(event.target)) {
+            navMenu.className = "nav-menu";
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
 
 /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
 window.onscroll = function() {headerShadow()};
@@ -73,23 +106,23 @@ sr.reveal('.top-header',{})
 const srLeft = ScrollReveal({
 origin: 'left',
 distance: '80px',
-duration: 2000,
+duration: 1000,
 reset: true
 })
 
-srLeft.reveal('.about-info',{delay: 100})
-srLeft.reveal('.contact-info',{delay: 100})
+srLeft.reveal('.about-info',{delay: 50})
+srLeft.reveal('.contact-info',{delay: 50})
 
 /* -- ABOUT SKILLS & FORM BOX -- */
 const srRight = ScrollReveal({
 origin: 'right',
 distance: '80px',
-duration: 2000,
+duration: 1000,
 reset: true
 })
 
-srRight.reveal('.skills-box',{delay: 100})
-srRight.reveal('.form-control',{delay: 100})
+srRight.reveal('.skills-box',{delay: 50})
+srRight.reveal('.form-control',{delay: 50})
 
 
 
@@ -118,4 +151,52 @@ sections.forEach(current =>{
 }
 
 window.addEventListener('scroll', scrollActive)
+
+/* ----- MOBILE OPTIMIZATIONS ----- */
+// Add touch feedback for mobile devices
+document.addEventListener('DOMContentLoaded', function() {
+    // Add touch feedback for buttons and links
+    const touchElements = document.querySelectorAll('.btn, .icon, .nav-link');
+    
+    touchElements.forEach(element => {
+        element.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+        
+        element.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+        });
+        
+        element.addEventListener('touchcancel', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Improve viewport handling for mobile
+    if (window.innerWidth <= 768) {
+        // Set viewport height for mobile browsers
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
+        // Update on resize
+        window.addEventListener('resize', () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
+    }
+    
+    // Add smooth scrolling for anchor links on mobile
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
 
