@@ -1350,6 +1350,40 @@ footer{
     padding: 20px;
 }
 
+.featured-container[data-category-container="videos"] .featured-carousel-section {
+    padding: 0;
+}
+
+.featured-container[data-category-container="videos"] .featured-carousel-section > h2 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.featured-container[data-category-container="videos"] .carousel-container {
+    overflow: visible;
+}
+
+.featured-container[data-category-container="videos"] .carousel-track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    transform: none !important;
+}
+
+.featured-container[data-category-container="videos"] .carousel-item {
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.featured-container[data-category-container="videos"] .carousel-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 10px);
+}
+
 .carousel-content h4 {
     color: var(--text-color);
     font-size: 1.1rem;
@@ -1415,6 +1449,16 @@ footer{
     .featured-carousel-section {
         padding: 0 15px;
     }
+
+    .featured-container[data-category-container="videos"] .carousel-track {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-container[data-category-container="videos"] .carousel-item:last-child:nth-child(odd) {
+        grid-column: auto;
+        justify-self: stretch;
+        width: auto;
+    }
 }
 
 .featured-container {
@@ -1426,6 +1470,44 @@ footer{
     padding: 0 20px;
 }
 
+.featured-container[hidden] {
+    display: none;
+}
+
+.featured-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+
+.section-divider .featured-filters {
+    display: inline-flex;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 0 12px;
+    background: var(--body-color);
+}
+
+.featured-filter {
+    padding: 12px 24px;
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font: inherit;
+    transition: .4s;
+}
+
+.featured-filter:hover,
+.featured-filter.active {
+    color: #ffffff;
+    background: var(--main-color);
+}
+
 .featured-article {
     display: flex;
     background: var(--body-color);
@@ -1434,6 +1516,10 @@ footer{
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--hover-color);
+}
+
+.featured-article[hidden] {
+    display: none;
 }
 
 .featured-article:hover {

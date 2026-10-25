@@ -73,59 +73,155 @@
               <h1>Featured</h1>
           </div>
        </section>
+        
+        <!-- Section Divider - Filter Buttons -->
+        <div class="section-divider">
+          <div class="featured-filters" role="group" aria-label="Featured content categories">
+              <button type="button" class="featured-filter active" data-category="articles" aria-pressed="true">
+                  Articles
+              </button>
+              <button type="button" class="featured-filter" data-category="contributions" aria-pressed="false">
+                  Contributions
+              </button>
+              <button type="button" class="featured-filter" data-category="videos" aria-pressed="false">
+                  Videos
+              </button>
+          </div></div>
 
-       <!-- -------------- FEATURED ARTICLES BOX ---------------- -->
-       <!-- LinkedIn-style Featured Carousel -->
-       <!-- <section class="section featured-articles-section">
-          <div class="featured-carousel-section">
-              <div class="carousel-header">
-                  <h2></h2>
-                  <div class="carousel-nav">
-                      <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">
-                          <i class="uil uil-angle-left"></i>
-                      </button>
-                      <button class="carousel-btn next-btn" onclick="moveCarousel(1)">
-                          <i class="uil uil-angle-right"></i>
-                      </button>
-                  </div>
-              </div>
-              
-              <div class="carousel-container">
-                  <div class="carousel-track" id="carouselTrack">
+          <!-- Articles - Self published -->
+          <div class="featured-container" data-category-container="articles">
+            <div class="featured-article">
+                <div class="article-image">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CBnnWzw6FQtMD8-5pZMJaA.png" alt="Inside CVE-2024-4367: Arbitrary JavaScript Execution via PDF.js">
+                </div>
+                <div class="article-content">
+                    <h3>Inside CVE-2024-4367: Arbitrary JavaScript Execution via PDF.js</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Apr 2, 2026</p>
+                    <p class="article-description">
+                        A technical deep dive into CVE-2024-4367 in PDF.js that enables arbitrary JS execution through improper validation of PDF font data. Explores the root cause, exploitation, real-world impact and mitigation strategies.
+                    </p>
+                    <div class="article-tags">
+                    <span class="tag">CVE-2024-4367</span>
+                    <span class="tag">PDF.js</span>
+                    <span class="tag">JavaScript Execution</span>
+                    </div>
+                    <a href="https://infosecwriteups.com/inside-cve-2024-4367-arbitrary-javascript-execution-via-pdf-js-abb4afff4141" class="article-link" target="_blank">
+                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
 
-                      <div class="carousel-item">
-                          <div class="carousel-image">
-                              <img src="https://miro.medium.com/v2/format:webp/1*ta4vnWL-5q944qLwSQdRgg.png" alt="Session Hijacking">
-                          </div>
-                          <div class="carousel-content">
-                              <h4>Session Hijacking Using XSS</h4>
-                              <p>Exploring nested script tags and sanitization bypass techniques</p>
-                              <span class="carousel-date">Jun 29, 2024</span>
-                          </div>
-                      </div>
-                      
-                      <div class="carousel-item">
-                          <div class="carousel-image">
-                              <img src="https://miro.medium.com/v2/format:webp/0*LBj1de56oOOooW5S" alt="Covert Channels">
-                          </div>
-                          <div class="carousel-content">
-                              <h4>Covert Channels: Hiding Data</h4>
-                              <p>Secret communication through unexpected pathways</p>
-                              <span class="carousel-date">Jul 27, 2024</span>
-                          </div>
-                      </div>
-                      
-                  </div>
-              </div>
-          </div> -->
-          
-          <!-- Divider -->
-          <!-- <div class="section-divider">
-              <h2>Articles</h2>
-          </div> -->
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/1*ta4vnWL-5q944qLwSQdRgg.png" alt="Session Hijacking Using XSS">
+                </div>
+                <div class="article-content">
+                    <h3>Session Hijacking Using XSS</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Jun 29, 2025</p>
+                    <p class="article-description">
+                        An in-depth exploration of how nested script tags can bypass sanitization logic and enable session hijacking via Cross‑Site Scripting (XSS) injections.
+                    </p>
+                    <div class="article-tags">
+                    <span class="tag">Web Security</span>
+                    <span class="tag">XSS</span>
+                    <span class="tag">Session Hijacking</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/session-hijacking-using-xss-f3448fb531d4" class="article-link" target="_blank">
+                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
 
-          <div class="featured-container">
-            
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/1*44STUDcUa1gXkLD6JQZlsA.png" alt="Data Wiping Security">
+                </div>
+
+                <div class="article-content">
+                    <h3>Don't Just Format, Wipe Your Data Before Selling Your Devices</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Aug 5, 2024</p>
+                    <p class="article-description">
+                        Have you ever sold a phone or laptop before? Did you reset these devices before selling/exchanging them? Learn why simple formatting isn't enough and how to properly delete your data before device disposal.
+                    </p>
+                    <div class="article-tags">
+                        <span class="tag">Data Security</span>
+                        <span class="tag">Privacy</span>
+                        <span class="tag">Device Security</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/dont-just-format-wipe-your-data-before-selling-your-devices-7862c0845091" class="article-link" target="_blank">
+                        <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/0*LBj1de56oOOooW5S" alt="Covert Channels">
+                </div>
+                <div class="article-content">
+                    <h3>Covert Channels: Hiding Data in the Shadows of Communication</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Jul 27, 2024</p>
+                    <p class="article-description">
+                        A covert channel is a logical channel used to send hidden messages by exploiting information hiding techniques over a public channel. These channels enable secret communication by leveraging unexpected pathways.
+                    </p>
+                    <div class="article-tags">
+                    <span class="tag">Covert Communication</span>
+                    <span class="tag">Network Security</span>
+                    <span class="tag">Information Hiding</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/understanding-covert-channels-hands-on-19585315a19d" class="article-link" target="_blank">
+                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/1*JpnizaQkSvYVYDPNy325OA.png" alt="IDOR ERP Vulnerability">
+                </div>
+                <div class="article-content">
+                    <h3>How I found IDOR in College’s Third‑Party ERP Solution</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Apr 26, 2024</p>
+                    <p class="article-description">
+                    Detailed the discovery and remediation of an Insecure Direct Object Reference (IDOR) vulnerability in a third‑party ERP system, exposing sensitive student data.
+                    </p>
+                    <div class="article-tags">
+                    <span class="tag">Cybersecurity</span>
+                    <span class="tag">IDOR</span>
+                    <span class="tag">Vulnerability Discovery</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/idor-vulnerability-in-colleges-third-party-erp-solution-61497724eda7" class="article-link" target="_blank">
+                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="featured-article">
+                <div class="article-image">
+                    <img src="https://miro.medium.com/v2/format:webp/1*4bOx5YocyFyK9zAspCLZKQ.png" alt="VITS Text-to-Speech">
+                </div>
+                <div class="article-content">
+                    <h3>Using VITS for Text-to-Speech (TTS) — with Code</h3>
+                    <p class="article-publication">Published in <strong>Medium</strong> • Apr 1, 2024</p>
+                    <p class="article-description">
+                        An introduction to implementing VITS (Variational Inference with adversarial learning for end-to-end Text-to-Speech) with practical code examples and implementation walkthrough.
+                    </p>
+                    <div class="article-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Text-to-Speech</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <a href="https://medium.com/@vansh_/using-vits-for-text-to-speech-tts-with-code-6e4e2c25e57d" class="article-link" target="_blank">
+                        <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
+                        </a>
+                </div>
+            </div>
+
+          </div>
+
+          <!-- Contributions -->
+          <div class="featured-container" data-category-container="contributions" hidden>
             <div class="featured-article">
                 <div class="article-image">
                     <img src="./assets/images/CyberThreats.png" alt="Cybersecurity Threats">
@@ -254,27 +350,6 @@
 
             <div class="featured-article">
                 <div class="article-image">
-                    <img src="https://miro.medium.com/v2/format:webp/1*ta4vnWL-5q944qLwSQdRgg.png" alt="Session Hijacking Using XSS">
-                </div>
-                <div class="article-content">
-                    <h3>Session Hijacking Using XSS</h3>
-                    <p class="article-publication">Published in <strong>Medium</strong> • Jun 29, 2025</p>
-                    <p class="article-description">
-                        An in-depth exploration of how nested script tags can bypass sanitization logic and enable session hijacking via Cross‑Site Scripting (XSS) injections.
-                    </p>
-                    <div class="article-tags">
-                    <span class="tag">Web Security</span>
-                    <span class="tag">XSS</span>
-                    <span class="tag">Session Hijacking</span>
-                    </div>
-                    <a href="https://medium.com/@vansh_/session-hijacking-using-xss-f3448fb531d4" class="article-link" target="_blank">
-                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="featured-article">
-                <div class="article-image">
                     <img src="./assets/images/RiskComm.png" alt="Risk Communication">
                 </div>
                 <div class="article-content">
@@ -293,95 +368,107 @@
                     </a>
                 </div>
             </div>
-
-            <div class="featured-article">
-                <div class="article-image">
-                    <img src="https://miro.medium.com/v2/format:webp/1*44STUDcUa1gXkLD6JQZlsA.png" alt="Data Wiping Security">
-                </div>
-                <div class="article-content">
-                    <h3>Don't Just Format, Wipe Your Data Before Selling Your Devices</h3>
-                    <p class="article-publication">Published in <strong>Medium</strong> • Aug 5, 2024</p>
-                    <p class="article-description">
-                        Have you ever sold a phone or laptop before? Did you reset these devices before selling/exchanging them? Learn why simple formatting isn't enough and how to properly delete your data before device disposal.
-                    </p>
-                    <div class="article-tags">
-                        <span class="tag">Data Security</span>
-                        <span class="tag">Privacy</span>
-                        <span class="tag">Device Security</span>
-                    </div>
-                    <a href="https://medium.com/@vansh_/dont-just-format-wipe-your-data-before-selling-your-devices-7862c0845091" class="article-link" target="_blank">
-                        <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="featured-article">
-                <div class="article-image">
-                    <img src="https://miro.medium.com/v2/format:webp/0*LBj1de56oOOooW5S" alt="Covert Channels">
-                </div>
-                <div class="article-content">
-                    <h3>Covert Channels: Hiding Data in the Shadows of Communication</h3>
-                    <p class="article-publication">Published in <strong>Medium</strong> • Jul 27, 2024</p>
-                    <p class="article-description">
-                        A covert channel is a logical channel used to send hidden messages by exploiting information hiding techniques over a public channel. These channels enable secret communication by leveraging unexpected pathways.
-                    </p>
-                    <div class="article-tags">
-                    <span class="tag">Covert Communication</span>
-                    <span class="tag">Network Security</span>
-                    <span class="tag">Information Hiding</span>
-                    </div>
-                    <a href="https://medium.com/@vansh_/understanding-covert-channels-hands-on-19585315a19d" class="article-link" target="_blank">
-                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="featured-article">
-                <div class="article-image">
-                    <img src="https://miro.medium.com/v2/format:webp/1*JpnizaQkSvYVYDPNy325OA.png" alt="IDOR ERP Vulnerability">
-                </div>
-                <div class="article-content">
-                    <h3>How I found IDOR in College’s Third‑Party ERP Solution</h3>
-                    <p class="article-publication">Published in <strong>Medium</strong> • Apr 26, 2024</p>
-                    <p class="article-description">
-                    Detailed the discovery and remediation of an Insecure Direct Object Reference (IDOR) vulnerability in a third‑party ERP system, exposing sensitive student data.
-                    </p>
-                    <div class="article-tags">
-                    <span class="tag">Cybersecurity</span>
-                    <span class="tag">IDOR</span>
-                    <span class="tag">Vulnerability Discovery</span>
-                    </div>
-                    <a href="https://medium.com/@vansh_/idor-vulnerability-in-colleges-third-party-erp-solution-61497724eda7" class="article-link" target="_blank">
-                    <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="featured-article">
-                <div class="article-image">
-                    <img src="https://miro.medium.com/v2/format:webp/1*4bOx5YocyFyK9zAspCLZKQ.png" alt="VITS Text-to-Speech">
-                </div>
-                <div class="article-content">
-                    <h3>Using VITS for Text-to-Speech (TTS) — with Code</h3>
-                    <p class="article-publication">Published in <strong>Medium</strong> • Apr 1, 2024</p>
-                    <p class="article-description">
-                        An introduction to implementing VITS (Variational Inference with adversarial learning for end-to-end Text-to-Speech) with practical code examples and implementation walkthrough.
-                    </p>
-                    <div class="article-tags">
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Text-to-Speech</span>
-                        <span class="tag">AI</span>
-                    </div>
-                    <a href="https://medium.com/@vansh_/using-vits-for-text-to-speech-tts-with-code-6e4e2c25e57d" class="article-link" target="_blank">
-                        <button class="btn">Read Article <i class="uil uil-external-link-alt"></i></button>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Add more featured articles as needed -->
           </div>
-       </section>
+
+          <!-- Videos -->
+          <div class="featured-container" data-category-container="videos" hidden>
+              <div class="featured-carousel-section">
+
+              <div class="carousel-container">
+                  <div class="carousel-track" id="carouselTrack">
+
+                    <a href="https://www.youtube.com/watch?v=XEcZzWTasrk" class="carousel-item" target="_blank" rel="noopener noreferrer">
+                        <div class="carousel-image">
+                            <img src="https://img.youtube.com/vi/XEcZzWTasrk/hqdefault.jpg" alt="Did AI Learn to Cheat?">
+                        </div>
+                        <div class="carousel-content">
+                            <h4>Did AI Learn to Cheat?</h4>
+                            <p>Exploring AI behavior, deceptive strategies, and the security implications of AI systems.</p>
+                            <span class="carousel-date">Aug 1, 2026</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=FyVDJ_vbxto" class="carousel-item" target="_blank" rel="noopener noreferrer">
+                        <div class="carousel-image">
+                            <img src="https://img.youtube.com/vi/FyVDJ_vbxto/hqdefault.jpg" alt="The Internet Never Forgets">
+                        </div>
+                        <div class="carousel-content">
+                            <h4>The Internet Never Forgets | Internet Archive &amp; Wayback Machine</h4>
+                            <p>Exploring the Internet Archive and Wayback Machine to uncover historical versions of websites.</p>
+                            <span class="carousel-date">Jun 28, 2026</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=i-qZgk9Rkqw" class="carousel-item" target="_blank" rel="noopener noreferrer">
+                        <div class="carousel-image">
+                            <img src="https://img.youtube.com/vi/i-qZgk9Rkqw/hqdefault.jpg" alt="The Real Lesson From the Meta AI Breach">
+                        </div>
+                        <div class="carousel-content">
+                            <h4>The Real Lesson From the Meta AI Breach</h4>
+                            <p>Examining security lessons and potential risks highlighted by the Meta AI breach.</p>
+                            <span class="carousel-date">Jun 17, 2026</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=UjSXQaiPLFM" class="carousel-item" target="_blank" rel="noopener noreferrer">
+                        <div class="carousel-image">
+                            <img src="https://img.youtube.com/vi/UjSXQaiPLFM/hqdefault.jpg" alt="The File That Changed Password Cracking: rockyou.txt">
+                        </div>
+                        <div class="carousel-content">
+                            <h4>The File That Changed Password Cracking: rockyou.txt</h4>
+                            <p>Understanding rockyou.txt, password wordlists, and their role in password security testing.</p>
+                            <span class="carousel-date">May 31, 2026</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=ny_bPrGNUfc" class="carousel-item" target="_blank" rel="noopener noreferrer">
+                        <div class="carousel-image">
+                            <img src="https://img.youtube.com/vi/ny_bPrGNUfc/hqdefault.jpg" alt="CVE-2024-4367 PDF.js">
+                        </div>
+                        <div class="carousel-content">
+                            <h4>How PDF.js Ended Up Executing JavaScript (CVE-2024-4367)</h4>
+                            <p>Breaking down the PDF.js vulnerability that could allow arbitrary JavaScript execution.</p>
+                            <span class="carousel-date">May 17, 2026</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=XF-dLuPMOvU" class="carousel-item" target="_blank" rel="noopener noreferrer">
+                        <div class="carousel-image">
+                            <img src="https://img.youtube.com/vi/XF-dLuPMOvU/hqdefault.jpg" alt="The Real Problem Behind the Vercel Breach">
+                        </div>
+                        <div class="carousel-content">
+                            <h4>The Real Problem Behind the Vercel Breach | OAuth Permissions</h4>
+                            <p>Examining OAuth permissions and the security risks associated with excessive application access.</p>
+                            <span class="carousel-date">May 10, 2026</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=CvStFgq8468" class="carousel-item" target="_blank" rel="noopener noreferrer">
+                        <div class="carousel-image">
+                            <img src="https://img.youtube.com/vi/CvStFgq8468/hqdefault.jpg" alt="Finding Locations from Photos">
+                        </div>
+                        <div class="carousel-content">
+                            <h4>3 Images, 3 Stories | Finding Locations from Photos</h4>
+                            <p>Demonstrating image-based OSINT techniques to identify locations from photographs.</p>
+                            <span class="carousel-date">Apr 26, 2026</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=HNWSCG7NrLs" class="carousel-item" target="_blank" rel="noopener noreferrer">
+                        <div class="carousel-image">
+                            <img src="https://img.youtube.com/vi/HNWSCG7NrLs/hqdefault.jpg" alt="Starting Cybersecurity With No Certs and a Lot of Doubt">
+                        </div>
+                        <div class="carousel-content">
+                            <h4>Starting Cybersecurity With No Certs &amp; A Lot of Doubt</h4>
+                            <p>Discussing the challenges of starting a cybersecurity career without certifications and navigating self-doubt.</p>
+                            <span class="carousel-date">Apr 19, 2026</span>
+                        </div>
+                    </a>
+                      
+                  </div>
+              </div>
+              </div>
+          </div>
 
        <!-- -------------- BACK TO HOME ---------------- -->
        <section class="section" style="padding-top: 2em; padding-bottom: 3em;">
@@ -440,66 +527,31 @@
 
     <!-- ----- MAIN JS ----- -->
     <script src="./main.js"></script>
-    
-    <!-- ----- CAROUSEL FUNCTIONALITY ----- -->
+
     <script>
-        let currentIndex = 0;
-        const carouselTrack = document.getElementById('carouselTrack');
-        const items = document.querySelectorAll('.carousel-item');
-        const totalItems = items.length;
-        const itemsVisible = window.innerWidth <= 768 ? 1 : 3; // Show 1 item on mobile, 3 on desktop
-        const maxIndex = totalItems - itemsVisible;
+        const featuredFilters = document.querySelectorAll('.featured-filter');
+        const featuredContainers = document.querySelectorAll('[data-category-container]');
 
-        function moveCarousel(direction) {
-            currentIndex += direction;
-            
-            // Boundary checks
-            if (currentIndex < 0) {
-                currentIndex = 0;
-            } else if (currentIndex > maxIndex) {
-                currentIndex = maxIndex;
-            }
-            
-            // Calculate transform
-            const itemWidth = items[0].offsetWidth + 20; // item width + gap
-            const translateX = -currentIndex * itemWidth;
-            
-            carouselTrack.style.transform = `translateX(${translateX}px)`;
-            
-            // Update button states
-            updateButtonStates();
-        }
+        featuredFilters.forEach((filter) => {
+            filter.addEventListener('click', () => {
+                const selectedCategory = filter.dataset.category;
 
-        function updateButtonStates() {
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex === maxIndex;
-        }
+                featuredFilters.forEach((button) => {
+                    const isSelected = button === filter;
+                    button.classList.toggle('active', isSelected);
+                    button.setAttribute('aria-pressed', String(isSelected));
+                });
 
-        // Initialize button states
-        updateButtonStates();
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            currentIndex = 0;
-            carouselTrack.style.transform = 'translateX(0px)';
-            updateButtonStates();
-        });
-
-        // Add click functionality to carousel items
-        document.querySelectorAll('.carousel-item').forEach((item, index) => {
-            item.addEventListener('click', () => {
-                const articleLinks = [
-                    'https://medium.com/@vansh_/session-hijacking-using-xss-f3448fb531d4',
-                    'https://medium.com/@vansh_/understanding-covert-channels-hands-on-19585315a19d',
-                    'https://medium.com/@vansh_/idor-vulnerability-in-colleges-third-party-erp-solution-61497724eda7',
-                    'https://medium.com/@vansh_/dont-just-format-wipe-your-data-before-selling-your-devices-7862c0845091'
-                ];
-                window.open(articleLinks[index], '_blank');
+                featuredContainers.forEach((container) => {
+                    container.hidden = container.dataset.categoryContainer !== selectedCategory;
+                });
             });
         });
+
+        featuredContainers.forEach((container) => {
+            container.hidden = container.dataset.categoryContainer !== 'articles';
+        });
     </script>
+    
 </body>
 </html>
